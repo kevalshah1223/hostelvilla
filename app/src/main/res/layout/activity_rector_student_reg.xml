@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainColor"
+    tools:context=".RectorStudentRegActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_10sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_10sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_10sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewRegisterStudent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_student"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+            app:layout_constraintStart_toStartOf="@id/guideLineStart"
+            app:layout_constraintTop_toTopOf="@id/guideLineTop" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutStudentName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_destination_design"
+            android:hint="@string/student_name"
+            android:textColorHint="@color/mainColor"
+            app:hintTextColor="@color/mainColor"
+            app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+            app:layout_constraintStart_toStartOf="@id/guideLineStart"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRegisterStudent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_destination_design"
+                android:inputType="textPersonName|textCapWords"
+                android:lines="1"
+                android:textColor="@color/mainColor"
+                android:textColorHint="@color/mainColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutStudentContactNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_destination_design"
+            android:hint="@string/student_contact_number"
+            android:textColorHint="@color/mainColor"
+            app:hintTextColor="@color/mainColor"
+            app:layout_constraintEnd_toEndOf="@id/textInputLayoutStudentName"
+            app:layout_constraintStart_toStartOf="@id/textInputLayoutStudentName"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutStudentName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_destination_design"
+                android:inputType="number"
+                android:lines="1"
+                android:textColor="@color/mainColor"
+                android:textColorHint="@color/mainColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutStudentParentName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_destination_design"
+            android:hint="@string/parent_name"
+            android:textColorHint="@color/mainColor"
+            app:hintTextColor="@color/mainColor"
+            app:layout_constraintEnd_toEndOf="@id/textInputLayoutStudentContactNumber"
+            app:layout_constraintStart_toStartOf="@id/textInputLayoutStudentContactNumber"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutStudentContactNumber">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_destination_design"
+                android:inputType="textPersonName|textCapWords"
+                android:lines="1"
+                android:textColor="@color/mainColor"
+                android:textColorHint="@color/mainColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutStudentParentPhoneNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_destination_design"
+            android:hint="@string/parent_mobile_number"
+            android:textColorHint="@color/mainColor"
+            app:hintTextColor="@color/mainColor"
+            app:layout_constraintEnd_toEndOf="@id/textInputLayoutStudentParentName"
+            app:layout_constraintStart_toStartOf="@id/textInputLayoutStudentParentName"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutStudentParentName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_destination_design"
+                android:inputType="number"
+                android:lines="1"
+                android:textColor="@color/mainColor"
+                android:textColorHint="@color/mainColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutStudentHostelNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_destination_design"
+            android:hint="@string/hostel_number"
+            android:textColorHint="@color/mainColor"
+            app:hintTextColor="@color/mainColor"
+            app:layout_constraintEnd_toEndOf="@id/textInputLayoutStudentParentPhoneNumber"
+            app:layout_constraintStart_toStartOf="@id/textInputLayoutStudentParentPhoneNumber"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutStudentParentPhoneNumber">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_destination_design"
+                android:inputType="number"
+                android:lines="1"
+                android:textColor="@color/mainColor"
+                android:textColorHint="@color/mainColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutStudentRoomNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_destination_design"
+            android:hint="@string/hostel_room_no"
+            android:textColorHint="@color/mainColor"
+            app:hintTextColor="@color/mainColor"
+            app:layout_constraintEnd_toEndOf="@id/textInputLayoutStudentHostelNumber"
+            app:layout_constraintStart_toStartOf="@id/textInputLayoutStudentHostelNumber"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutStudentHostelNumber">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_destination_design"
+                android:inputType="number"
+                android:lines="1"
+                android:textColor="@color/mainColor"
+                android:textColorHint="@color/mainColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutStudentAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_destination_design"
+            android:hint="@string/address"
+            android:textColorHint="@color/mainColor"
+            app:hintTextColor="@color/mainColor"
+            app:layout_constraintEnd_toEndOf="@id/textInputLayoutStudentRoomNumber"
+            app:layout_constraintStart_toStartOf="@id/textInputLayoutStudentRoomNumber"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutStudentRoomNumber">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_destination_design"
+                android:gravity="start"
+                android:inputType="textMultiLine"
+                android:maxLines="5"
+                android:minLines="1"
+                android:scrollbars="vertical"
+                android:textColor="@color/mainColor"
+                android:textColorHint="@color/mainColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonRegisterStudent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:backgroundTint="@color/white"
+            android:text="@string/register_student"
+            android:textAllCaps="false"
+            android:textColor="@color/mainColor"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+            app:layout_constraintStart_toStartOf="@id/guideLineStart"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutStudentAddress" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:background="@color/mainColor">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="0dp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+        app:layout_constraintStart_toEndOf="@id/guideLineStart"
+        app:layout_constraintTop_toBottomOf="@id/guideLineTop">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutLeave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineTopCardMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="10dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineStartCardMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="10dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineEndCardMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="10dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineMiddle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewHostelNoText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/hostel_no"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/mainColor"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/guideLineMiddle"
+                app:layout_constraintStart_toStartOf="@id/guideLineStartCardMain"
+                app:layout_constraintTop_toTopOf="@id/guideLineTopCardMain"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textHostelNo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/xxxxxx"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="10sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/textViewHostelNoText"
+                app:layout_constraintStart_toStartOf="@id/textViewHostelNoText"
+                app:layout_constraintTop_toBottomOf="@id/textViewHostelNoText"
+                tools:targetApi="o" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewRoomNoText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/hostel_room_no"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/mainColor"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/guideLineEndCardMain"
+                app:layout_constraintStart_toEndOf="@id/textViewHostelNoText"
+                app:layout_constraintTop_toTopOf="@id/textViewHostelNoText"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewRoomNo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/xxxxxx"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="10sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/textViewRoomNoText"
+                app:layout_constraintStart_toStartOf="@id/textViewRoomNoText"
+                app:layout_constraintTop_toBottomOf="@id/textViewRoomNoText"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewSubjectText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/subject"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/mainColor"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/guideLineEndCardMain"
+                app:layout_constraintStart_toStartOf="@id/textViewHostelNoText"
+                app:layout_constraintTop_toBottomOf="@id/textHostelNo"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textHostelSubject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/xxxxxx"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="10sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/textViewSubjectText"
+                app:layout_constraintStart_toStartOf="@id/textViewSubjectText"
+                app:layout_constraintTop_toBottomOf="@id/textViewSubjectText"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDescriptionText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/description"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/mainColor"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/textViewSubjectText"
+                app:layout_constraintStart_toStartOf="@id/textViewSubjectText"
+                app:layout_constraintTop_toBottomOf="@id/textHostelSubject"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="4"
+                android:minLines="1"
+                android:scrollbars="vertical"
+                android:text="@string/xxxxxx"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/textViewDescriptionText"
+                app:layout_constraintStart_toStartOf="@id/textViewDescriptionText"
+                app:layout_constraintTop_toBottomOf="@id/textViewDescriptionText"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewIsComplaintSeen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/approved_design"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:text="@string/unseen"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/textViewDescription"
+                app:layout_constraintTop_toBottomOf="@id/textViewDescription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

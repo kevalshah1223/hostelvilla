@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainColor"
+    tools:context=".StudentTakePassFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/_5sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_5sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_5sdp" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewApplyForLeave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="@string/apply_for_leave_pass"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+            app:layout_constraintStart_toEndOf="@id/guideLineStart"
+            app:layout_constraintTop_toBottomOf="@id/guideLineTop" />
+
+        <View
+            android:id="@+id/viewApplyLeaveUnderline"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/textViewApplyForLeave"
+            app:layout_constraintStart_toStartOf="@id/textViewApplyForLeave"
+            app:layout_constraintTop_toBottomOf="@id/textViewApplyForLeave" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewSelectType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="@string/pass_type"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintBottom_toBottomOf="@id/radioGroupPassType"
+            app:layout_constraintStart_toEndOf="@id/guideLineStart"
+            app:layout_constraintTop_toTopOf="@id/radioGroupPassType" />
+
+
+        <RadioGroup
+            android:id="@+id/radioGroupPassType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/textViewSelectType"
+            app:layout_constraintStart_toEndOf="@id/textViewSelectType"
+            app:layout_constraintTop_toBottomOf="@id/buttonClearSelection">
+
+            <View
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="0dp" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radioHomePass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/white"
+                android:text="@string/home_pass"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
+                tools:targetApi="lollipop" />
+
+            <View
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="0dp" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radioLatePass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/white"
+                android:text="@string/late_pass"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
+                tools:targetApi="lollipop" />
+        </RadioGroup>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonClearSelection"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clear"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/radioGroupPassType"
+            app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+            app:layout_constraintTop_toBottomOf="@id/viewApplyLeaveUnderline" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupLatePass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="textViewLatePassSelectDate,cardViewSelectLatePassDate,textViewLatePassSelectTime,cardViewSelectLatePassTime,textInputLayoutLatePassDestination,textInputLayoutLatePassPurpose" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewLatePassSelectDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/select_date"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintStart_toEndOf="@id/guideLineStart"
+            app:layout_constraintTop_toBottomOf="@id/radioGroupPassType" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewSelectLatePassDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/textViewLatePassSelectDate"
+            app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+            app:layout_constraintHorizontal_bias="0.03"
+            app:layout_constraintStart_toEndOf="@id/textViewLatePassSelectDate"
+            app:layout_constraintTop_toTopOf="@id/textViewLatePassSelectDate">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLatePassDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/_00_00_0000"
+                android:textColor="@color/mainColor"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewLatePassSelectTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/going_time"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintStart_toEndOf="@id/guideLineStart"
+            app:layout_constraintTop_toBottomOf="@id/cardViewSelectLatePassDate" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewSelectLatePassTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/textViewLatePassSelectTime"
+            app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/cardViewSelectLatePassDate"
+            app:layout_constraintTop_toTopOf="@id/textViewLatePassSelectTime">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLatePassTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/_00_00_am_pm"
+                android:textColor="@color/mainColor"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutLatePassDestination"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:hint="@string/destination"
+            app:hintTextColor="@color/mainColor"
+            app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+            app:layout_constraintStart_toEndOf="@id/guideLineStart"
+            app:layout_constraintTop_toBottomOf="@id/cardViewSelectLatePassTime">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_custom"
+                android:backgroundTint="@color/white"
+                android:inputType="text"
+                android:lines="1"
+                android:textColor="@color/mainColor"
+                android:textSize="@dimen/_13ssp"
+                app:hintTextColor="@color/mainColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutLatePassPurpose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/textview_custom"
+            android:hint="@string/purpose"
+            app:hintTextColor="@color/mainColor"
+            app:layout_constraintEnd_toEndOf="@id/textInputLayoutLatePassDestination"
+            app:layout_constraintStart_toStartOf="@id/textInputLayoutLatePassDestination"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutLatePassDestination">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/textview_custom"
+                android:backgroundTint="@color/white"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:lines="6"
+                android:scrollbars="vertical"
+                android:textColor="@color/mainColor"
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:textSize="@dimen/_13ssp"
+                app:hintTextColor="@color/mainColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonApplyForLatePass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:background="@color/white"
+            android:text="@string/apply_late_pass"
+            android:textAllCaps="false"
+            android:textColor="@color/mainColor"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/textInputLayoutLatePassPurpose"
+            app:layout_constraintStart_toStartOf="@id/textInputLayoutLatePassPurpose"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutLatePassPurpose"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <!--Home Pass-->
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupHomePass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="buttonApplyForHomePass,textViewHomePassSelectDate,cardViewSelectHomePassDate,cardViewSelectHomePassEndDate,textViewHomePassSelectEndDate,textInputLayoutHomePassDestination,textInputLayoutHomePassPurpose" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewHomePassSelectDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/going_date"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintStart_toEndOf="@id/guideLineStart"
+            app:layout_constraintTop_toBottomOf="@id/radioGroupPassType" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewSelectHomePassDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/textViewHomePassSelectDate"
+            app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+            app:layout_constraintHorizontal_bias="0.03"
+            app:layout_constraintStart_toEndOf="@id/textViewHomePassSelectDate"
+            app:layout_constraintTop_toTopOf="@id/textViewHomePassSelectDate">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewHomePassDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/_00_00_0000"
+                android:textColor="@color/mainColor"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewHomePassSelectEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/return_date"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintStart_toEndOf="@id/guideLineStart"
+            app:layout_constraintTop_toBottomOf="@id/cardViewSelectHomePassDate" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewSelectHomePassEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/textViewHomePassSelectEndDate"
+            app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/cardViewSelectHomePassDate"
+            app:layout_constraintTop_toTopOf="@id/textViewHomePassSelectEndDate">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewHomePassEndDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/_00_00_0000"
+                android:textColor="@color/mainColor"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutHomePassDestination"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/textview_custom"
+            android:hint="@string/destination"
+            app:hintTextColor="@color/mainColor"
+            app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+            app:layout_constraintStart_toEndOf="@id/guideLineStart"
+            app:layout_constraintTop_toBottomOf="@id/cardViewSelectHomePassEndDate">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_custom"
+                android:backgroundTint="@color/white"
+                android:inputType="text"
+                android:lines="1"
+                android:textColor="@color/mainColor"
+                android:textCursorDrawable="@drawable/custom_cursor"
+                android:textSize="@dimen/_13ssp"
+                app:hintTextColor="@color/mainColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutHomePassPurpose"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/textview_custom"
+            android:hint="@string/purpose"
+            app:hintTextColor="@color/mainColor"
+            app:layout_constraintEnd_toEndOf="@id/textInputLayoutHomePassDestination"
+            app:layout_constraintStart_toStartOf="@id/textInputLayoutHomePassDestination"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutHomePassDestination">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/textview_custom"
+                android:backgroundTint="@color/white"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:lines="6"
+                android:scrollbars="vertical"
+                android:textColor="@color/mainColor"
+                android:textSize="@dimen/_13ssp"
+                app:hintTextColor="@color/mainColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonApplyForHomePass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:background="@color/white"
+            android:text="@string/apply_home_pass"
+            android:textAllCaps="false"
+            android:textColor="@color/mainColor"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/textInputLayoutHomePassPurpose"
+            app:layout_constraintStart_toStartOf="@id/textInputLayoutHomePassPurpose"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutHomePassPurpose"
+            app:layout_constraintVertical_bias="0.1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

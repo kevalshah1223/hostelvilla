@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="5dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="0dp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+        app:layout_constraintStart_toEndOf="@id/guideLineStart"
+        app:layout_constraintTop_toBottomOf="@id/guideLineTop">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutLeave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineTopCardMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="10dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineStartCardMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="10dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineEndCardMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="10dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineMiddle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStudentNameText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/student_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/mainColor"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/guideLineEndCardMain"
+                app:layout_constraintStart_toStartOf="@id/guideLineStartCardMain"
+                app:layout_constraintTop_toTopOf="@id/guideLineTopCardMain"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStudentName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/xxxxxx"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="10sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/guideLineEndCardMain"
+                app:layout_constraintStart_toStartOf="@id/textViewStudentNameText"
+                app:layout_constraintTop_toBottomOf="@id/textViewStudentNameText"
+                tools:targetApi="o" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStudentHostelNumberText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/hostel_no"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/mainColor"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/guideLineMiddle"
+                app:layout_constraintStart_toStartOf="@id/textViewStudentNameText"
+                app:layout_constraintTop_toBottomOf="@id/textViewStudentName"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStudentHostelNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/xxxxxx"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="10sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/textViewStudentHostelNumberText"
+                app:layout_constraintStart_toStartOf="@id/textViewStudentHostelNumberText"
+                app:layout_constraintTop_toBottomOf="@id/textViewStudentHostelNumberText"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStudentRoomNumberText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/hostel_room_no"
+                android:textAlignment="textEnd"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/mainColor"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/guideLineEndCardMain"
+                app:layout_constraintStart_toStartOf="@id/guideLineMiddle"
+                app:layout_constraintTop_toTopOf="@id/textViewStudentHostelNumberText"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStudentRoomNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/xxxxxx"
+                android:textAlignment="textEnd"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="10sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/textViewStudentRoomNumberText"
+                app:layout_constraintStart_toStartOf="@id/textViewStudentRoomNumberText"
+                app:layout_constraintTop_toBottomOf="@id/textViewStudentRoomNumberText"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStudentSubjectText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/subject"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/mainColor"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/guideLineEndCardMain"
+                app:layout_constraintStart_toStartOf="@id/textViewStudentHostelNumberText"
+                app:layout_constraintTop_toBottomOf="@id/textViewStudentHostelNumber"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStudentSubject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/xxxxxx"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="10sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/textViewStudentSubjectText"
+                app:layout_constraintStart_toStartOf="@id/textViewStudentSubjectText"
+                app:layout_constraintTop_toBottomOf="@id/textViewStudentSubjectText"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStudentExplainText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/description"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/mainColor"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/guideLineEndCardMain"
+                app:layout_constraintStart_toStartOf="@id/textViewStudentSubjectText"
+                app:layout_constraintTop_toBottomOf="@id/textViewStudentSubject"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStudentExplain"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="none"
+                android:lines="4"
+                android:minLines="1"
+                android:scrollbars="vertical"
+                android:text="Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand Anand "
+                android:textAlignment="textStart"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/textViewStudentExplainText"
+                app:layout_constraintStart_toStartOf="@id/textViewStudentExplainText"
+                app:layout_constraintTop_toBottomOf="@id/textViewStudentExplainText"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonMarkAsSeen"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:backgroundTint="@color/mainColor"
+                android:text="@string/mark_as_seen"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/guideLineEndCardMain"
+                app:layout_constraintStart_toStartOf="@id/guideLineStartCardMain"
+                app:layout_constraintTop_toBottomOf="@id/textViewStudentExplain" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

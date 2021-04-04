@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/mainColor"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RectorDashboardActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/_10sdp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/_10sdp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLogout"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="@string/logout"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/textViewStudentName"
+        app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@id/guideLineStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewStudentName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="@string/user_name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/textViewStudentID"
+        app:layout_constraintEnd_toEndOf="@id/buttonLogout"
+        app:layout_constraintStart_toEndOf="@id/guideLineStart"
+        app:layout_constraintTop_toBottomOf="@id/buttonLogout" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewStudentID"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="Hostel 2"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_13ssp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@id/textViewStudentName"
+        app:layout_constraintStart_toStartOf="@id/textViewStudentName"
+        app:layout_constraintTop_toBottomOf="@id/textViewStudentName" />
+
+    <View
+        android:id="@+id/viewHorizontalLine"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/textViewDashboard"
+        app:layout_constraintEnd_toEndOf="@id/textViewStudentID"
+        app:layout_constraintStart_toStartOf="@id/textViewStudentID"
+        app:layout_constraintTop_toBottomOf="@id/textViewStudentID" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDashboard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="@string/dashboard"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/viewHorizontalLine"
+        app:layout_constraintStart_toStartOf="@id/viewHorizontalLine"
+        app:layout_constraintTop_toBottomOf="@id/viewHorizontalLine" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewRectorNotification"
+        android:clickable="true"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_110sdp"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintEnd_toStartOf="@+id/cardViewStudentRegister"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@id/textViewDashboard"
+        app:layout_constraintTop_toBottomOf="@id/textViewDashboard"
+        android:focusable="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewPass"
+                android:src="@drawable/pass"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/textViewPassManagement"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPassManagement"
+                android:textStyle="bold"
+                android:textColor="@color/mainColor"
+                android:textSize="@dimen/_13ssp"
+                android:fontFamily="sans-serif"
+                android:text="Student Pass"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/imageViewPass"
+                app:layout_constraintStart_toStartOf="@id/imageViewPass"
+                app:layout_constraintTop_toBottomOf="@id/imageViewPass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewRectorComplaint"
+        android:clickable="true"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_110sdp"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintEnd_toEndOf="@id/cardViewRectorNotification"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@id/cardViewRectorNotification"
+        app:layout_constraintTop_toBottomOf="@id/cardViewRectorNotification"
+        android:focusable="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewPass1"
+                android:src="@drawable/pass"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/textViewPassManagement1"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPassManagement1"
+                android:textStyle="bold"
+                android:textColor="@color/mainColor"
+                android:textSize="@dimen/_13ssp"
+                android:fontFamily="sans-serif"
+                android:text="Complaints"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/imageViewPass1"
+                app:layout_constraintStart_toStartOf="@id/imageViewPass1"
+                app:layout_constraintTop_toBottomOf="@id/imageViewPass1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewStudentRegister"
+        android:clickable="true"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_110sdp"
+        app:layout_constraintTop_toTopOf="@id/cardViewRectorNotification"
+        app:layout_constraintEnd_toEndOf="@id/textViewDashboard"
+        app:layout_constraintBottom_toBottomOf="@+id/cardViewRectorNotification"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cardViewRectorNotification"
+        android:focusable="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewComplaint"
+                android:src="@drawable/insert_student"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/textViewComplaintManagement"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewComplaintManagement"
+                android:textStyle="bold"
+                android:textColor="@color/mainColor"
+                android:textSize="@dimen/_13ssp"
+                android:fontFamily="sans-serif"
+                android:text="@string/register"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/imageViewComplaint"
+                app:layout_constraintStart_toStartOf="@id/imageViewComplaint"
+                app:layout_constraintTop_toBottomOf="@id/imageViewComplaint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainColor"
+    tools:context=".StudentComplaintFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="10dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineMiddle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="10dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="10dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewRegisterComplaint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register a Complaint"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+            app:layout_constraintStart_toStartOf="@id/guideLineStart"
+            app:layout_constraintTop_toTopOf="@id/guideLineTop" />
+
+        <View
+            android:id="@+id/viewUnderLine"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/textViewRegisterComplaint"
+            app:layout_constraintStart_toStartOf="@id/textViewRegisterComplaint"
+            app:layout_constraintTop_toBottomOf="@id/textViewRegisterComplaint" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutHostelNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/custom_destination_design"
+            android:hint="@string/hostel_no"
+            android:textColorHint="@color/mainColor"
+            app:hintTextColor="@color/mainColor"
+            app:layout_constraintEnd_toEndOf="@id/guideLineMiddle"
+            app:layout_constraintStart_toStartOf="@id/guideLineStart"
+            app:layout_constraintTop_toBottomOf="@id/viewUnderLine">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_destination_design"
+                android:inputType="number"
+                android:lines="1"
+                android:textColor="@color/mainColor"
+                android:textColorHint="@color/mainColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutRoomNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/custom_destination_design"
+            android:hint="@string/hostel_room_no"
+            android:textColorHint="@color/mainColor"
+            app:hintTextColor="@color/mainColor"
+            app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+            app:layout_constraintStart_toEndOf="@id/guideLineMiddle"
+            app:layout_constraintTop_toTopOf="@id/textInputLayoutHostelNo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_destination_design"
+                android:inputType="number"
+                android:lines="1"
+                android:textColor="@color/mainColor"
+                android:textColorHint="@color/mainColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutSubject"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_destination_design"
+            android:hint="@string/subject"
+            android:textColorHint="@color/mainColor"
+            app:hintTextColor="@color/mainColor"
+            app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+            app:layout_constraintStart_toEndOf="@id/guideLineStart"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutHostelNo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_destination_design"
+                android:inputType="text"
+                android:lines="1"
+                android:textColor="@color/mainColor"
+                android:textColorHint="@color/mainColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutExplanation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_destination_design"
+            android:hint="@string/complaint"
+            android:textColorHint="@color/mainColor"
+            app:hintTextColor="@color/mainColor"
+            app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+            app:layout_constraintStart_toEndOf="@id/guideLineStart"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutSubject">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_destination_design"
+                android:gravity="start"
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:minLines="4"
+                android:scrollbars="vertical"
+                android:textColor="@color/mainColor"
+                android:textColorHint="@color/mainColor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonRegisterStudent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/white"
+            android:text="@string/register_complain"
+            android:textAllCaps="false"
+            android:textColor="@color/mainColor"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/guideLineEnd"
+            app:layout_constraintStart_toStartOf="@id/guideLineStart"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutExplanation" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

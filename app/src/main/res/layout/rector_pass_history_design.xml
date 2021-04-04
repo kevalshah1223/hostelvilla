@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="5dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="0dp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintEnd_toStartOf="@id/guideLineEnd"
+        app:layout_constraintStart_toEndOf="@id/guideLineStart"
+        app:layout_constraintTop_toBottomOf="@id/guideLineTop">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutLeave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineTopCardMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="10dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineStartCardMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="10dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineEndCardMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="10dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLineMiddle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStudentNameText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/student_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/mainColor"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/guideLineEndCardMain"
+                app:layout_constraintStart_toStartOf="@id/guideLineStartCardMain"
+                app:layout_constraintTop_toTopOf="@id/guideLineTopCardMain"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStudentName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/xxxxxx"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="10sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/guideLineEndCardMain"
+                app:layout_constraintStart_toStartOf="@id/textViewStudentNameText"
+                app:layout_constraintTop_toBottomOf="@id/textViewStudentNameText"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLeaveTypeText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/leave_type"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/mainColor"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/textViewStudentNameText"
+                app:layout_constraintStart_toStartOf="@id/textViewStudentNameText"
+                app:layout_constraintTop_toBottomOf="@id/textViewStudentName"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLeaveType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/xxxxxx"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="10sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/textViewLeaveTypeText"
+                app:layout_constraintStart_toStartOf="@id/textViewLeaveTypeText"
+                app:layout_constraintTop_toBottomOf="@id/textViewLeaveTypeText"
+                tools:targetApi="o" />
+
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLeaveData1Text"
+                android:layout_width="0dp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/xxxxxx"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/mainColor"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/guideLineMiddle"
+                app:layout_constraintStart_toStartOf="@id/textViewLeaveTypeText"
+                app:layout_constraintTop_toBottomOf="@id/textViewLeaveType"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewData1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/xxxxxx"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="10sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/textViewLeaveData1Text"
+                app:layout_constraintStart_toStartOf="@id/textViewLeaveData1Text"
+                app:layout_constraintTop_toBottomOf="@id/textViewLeaveData1Text"
+                tools:targetApi="o" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLeaveData2Text"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/xxxxxx"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/mainColor"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/guideLineEndCardMain"
+                app:layout_constraintStart_toStartOf="@id/guideLineMiddle"
+                app:layout_constraintTop_toTopOf="@id/textViewLeaveData1Text"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewData2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/xxxxxx"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="10sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/textViewLeaveData2Text"
+                app:layout_constraintStart_toStartOf="@id/textViewLeaveData2Text"
+                app:layout_constraintTop_toBottomOf="@id/textViewLeaveData2Text"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewRectorText"
+                android:layout_width="0dp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/rector"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/mainColor"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/guideLineMiddle"
+                app:layout_constraintStart_toStartOf="@id/textViewLeaveTypeText"
+                app:layout_constraintTop_toBottomOf="@id/textViewData1"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewRector"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/pending"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="10sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/textViewRectorText"
+                app:layout_constraintStart_toStartOf="@id/textViewRectorText"
+                app:layout_constraintTop_toBottomOf="@id/textViewRectorText"
+                tools:targetApi="o" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewFacultyText"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/faculty"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:textColor="@color/mainColor"
+                app:autoSizeMaxTextSize="13sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/guideLineEndCardMain"
+                app:layout_constraintStart_toStartOf="@id/guideLineMiddle"
+                app:layout_constraintTop_toTopOf="@id/textViewRectorText"
+                tools:targetApi="o" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewFaculty"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:lines="1"
+                android:text="@string/pending"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/mainColor"
+                android:textStyle="bold"
+                app:autoSizeMaxTextSize="10sp"
+                app:autoSizeMinTextSize="10sp"
+                app:layout_constraintEnd_toEndOf="@id/textViewFacultyText"
+                app:layout_constraintStart_toStartOf="@id/textViewFacultyText"
+                app:layout_constraintTop_toBottomOf="@id/textViewFacultyText"
+                tools:targetApi="o" />
+            <androidx.constraintlayout.widget.Group
+                  android:id="@+id/groupButtonActions"
+                  android:layout_width="wrap_content"
+                  android:visibility="visible"
+                  android:layout_height="wrap_content"
+                  app:constraint_referenced_ids="buttonCancelPass,buttonAcceptPass,buttonViewPass" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupButtonMain"
+                android:layout_width="wrap_content"
+                android:visibility="visible"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="buttonCancelPass,buttonAcceptPass" />
+
+              <com.google.android.material.button.MaterialButton
+                  android:id="@+id/buttonCancelPass"
+                  style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginHorizontal="@dimen/_10sdp"
+                  android:layout_marginTop="10sp"
+                  android:layout_marginBottom="@dimen/_5sdp"
+                  android:text="@string/cancel_pass"
+                  android:textAllCaps="false"
+                  android:textColor="@android:color/holo_red_dark"
+                  android:textStyle="bold"
+                  app:layout_constraintEnd_toEndOf="@id/guideLineMiddle"
+                  app:layout_constraintStart_toStartOf="@id/guideLineStartCardMain"
+                  app:layout_constraintTop_toBottomOf="@id/textViewRector"
+                  app:strokeColor="@color/mainColor" />
+
+              <com.google.android.material.button.MaterialButton
+                  android:id="@+id/buttonAcceptPass"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginHorizontal="@dimen/_10sdp"
+                  android:backgroundTint="@color/mainColor"
+                  android:text="@string/accept_pass"
+                  android:textAllCaps="false"
+                  android:textColor="@color/white"
+                  android:textStyle="bold"
+                  app:layout_constraintEnd_toEndOf="@id/guideLineEndCardMain"
+                  app:layout_constraintStart_toStartOf="@id/guideLineMiddle"
+                  app:layout_constraintTop_toTopOf="@id/buttonCancelPass"
+                  tools:targetApi="lollipop" />
+
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:id="@+id/textViewYourPassIsCanceled"
+                  style="@style/Widget.MaterialComponents.Button.TextButton"
+                  android:layout_width="0dp"
+                  android:visibility="gone"
+                  android:layout_height="wrap_content"
+                  android:text="@string/your_pass_is_canceled"
+                  android:textColor="@color/purple_700"
+                  app:layout_constraintEnd_toEndOf="@id/guideLineEndCardMain"
+                  app:layout_constraintStart_toStartOf="@id/guideLineStartCardMain"
+                  app:layout_constraintTop_toBottomOf="@id/textViewRector" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonViewPass"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:text="@string/view_pass"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideLineEndCardMain"
+                app:layout_constraintStart_toStartOf="@id/guideLineStartCardMain"
+                app:layout_constraintTop_toBottomOf="@id/buttonCancelPass" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
