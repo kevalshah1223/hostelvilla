@@ -78,7 +78,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Student Username:"
+                android:text="Username:"
                 android:textAlignment="textStart"
                 android:textAllCaps="true"
                 android:textColor="@color/mainColor"

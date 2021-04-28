@@ -16,7 +16,7 @@ import java.io.IOException
 
 class LoginActivity : AppCompatActivity() {
 
-    companion object{
+    companion object {
         const val LOGIN = "LOGIN"
         const val USER_ROLE = "USER_ROLE"
         const val USER_ID = "USER_ID"
@@ -35,21 +35,21 @@ class LoginActivity : AppCompatActivity() {
         buttonLogin.setOnClickListener {
             val pref = getSharedPreferences(LOGIN, MODE_PRIVATE)
             val edit = pref.edit()
-            if(editTextUserName.text!!.isEmpty()){
+            if (editTextUserName.text!!.isEmpty()) {
                 Toast.makeText(applicationContext, "Enter Username", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if(editTextUserPassword.text!!.isEmpty()){
+            if (editTextUserPassword.text!!.isEmpty()) {
                 Toast.makeText(applicationContext, "Enter Password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if(MainClass().isConnected(applicationContext) == true){
+            if (MainClass().isConnected(applicationContext) == true) {
                 val client = OkHttpClient()
                 val request = Request.Builder()
-                        .url("${MainClass().getURL()}login.php?username=${editTextUserName.text.toString()}&password=${editTextUserPassword.text.toString()}")
-                        .build()
+                    .url("${MainClass().getURL()}login.php?username=${editTextUserName.text.toString()}&password=${editTextUserPassword.text.toString()}")
+                    .build()
                 client.newCall(request).enqueue(object : Callback {
                     override fun onFailure(call: Call, e: IOException) {
                     }
@@ -61,46 +61,74 @@ class LoginActivity : AppCompatActivity() {
                             dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
                             dialog.show()
                             val data = response.body?.string() as String
-                            Log.d("Data",data)
+                            Log.d("Data", data)
                             val JsonObject = JSONObject(data)
                             val success = JsonObject.getInt("success")
-                            if(success == 1){
+                            if (success == 1) {
                                 val role = JsonObject.getString("role")
                                 val id = JsonObject.getString("id")
-                                edit.putString(USER_ROLE,role)
-                                edit.putString(USER_UNIQUE_ID,id)
-                                edit.putString(USER_ID,editTextUserName.text.toString())
-                                edit.putString(USER_PASS,editTextUserPassword.text.toString())
+                                edit.putString(USER_ROLE, role)
+                                edit.putString(USER_UNIQUE_ID, id)
+                                edit.putString(USER_ID, editTextUserName.text.toString())
+                                edit.putString(USER_PASS, editTextUserPassword.text.toString())
                                 when (role) {
                                     "f" -> {
                                         startActivity(
-                                                Intent(this@LoginActivity, FacultyDashboardActivity::class.java)
+                                            Intent(
+                                                this@LoginActivity,
+                                                FacultyDashboardActivity::class.java
+                                            )
                                         )
                                         finish()
                                     }
                                     "r" -> {
                                         startActivity(
-                                                Intent(this@LoginActivity, RectorDashboardActivity::class.java)
+                                            Intent(
+                                                this@LoginActivity,
+                                                RectorDashboardActivity::class.java
+                                            )
                                         )
                                         finish()
                                     }
+
+                                    "a" -> {
+                                        startActivity(
+                                            Intent(
+                                                this@LoginActivity,
+                                                AdminDashboardActivity::class.java
+                                            )
+                                        )
+                                        finish()
+                                    }
+
                                     else -> {
                                         startActivity(
-                                                Intent(this@LoginActivity, StudentDashboardActivity::class.java)
+                                            Intent(
+                                                this@LoginActivity,
+                                                StudentDashboardActivity::class.java
+                                            )
                                         )
                                         finish()
                                     }
                                 }
                                 edit.apply()
-                            }else{
-                                Toast.makeText(applicationContext,"Invalid Username/Password, Try Again",Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(
+                                    applicationContext,
+                                    "Invalid Username/Password, Try Again",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             }
                             dialog.dismiss()
                         }
                     }
                 })
-            }else{
-                Toast.makeText(applicationContext,"No Internet Connection, Try Again", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(
+                    applicationContext,
+                    "No Internet Connection, Try Again",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
         }

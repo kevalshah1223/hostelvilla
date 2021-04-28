@@ -17,7 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HotelVilla"
         android:usesCleartextTraffic="true">
-        <activity android:name=".RectorComplaintManagmentActivity"></activity>
+        <activity android:name=".AddRectorActivity"></activity>
+        <activity android:name=".AddFacultyActivity" />
+        <activity android:name=".AdminDashboardActivity" />
+        <activity android:name=".RectorComplaintManagmentActivity" />
         <activity android:name=".RectorPassManagementActivity" />
         <activity android:name=".FacultyPassActivity" />
         <activity android:name=".RectorNotificationActivity" />

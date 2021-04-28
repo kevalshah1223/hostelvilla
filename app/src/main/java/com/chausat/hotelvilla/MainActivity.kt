@@ -31,6 +31,11 @@ class MainActivity : AppCompatActivity() {
                             Intent(this, RectorDashboardActivity::class.java)
                         )
                     }
+                    pref.getString("USER_ROLE",null) == "a" -> {
+                        startActivity(
+                            Intent(this, AdminDashboardActivity::class.java)
+                        )
+                    }
                     else -> {
                         startActivity(
                             Intent(this, StudentDashboardActivity::class.java)

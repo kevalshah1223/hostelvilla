@@ -63,4 +63,14 @@
     <string name="label_cancel">Pass is Canceled</string>
     <string name="label_student_info">Student Info</string>
     <string name="password">Password</string>
+    <string name="label_admin">Admin</string>
+    <string name="button_add_faculty">Add Faculty</string>
+    <string name="button_add_rector">Add Rector</string>
+    <string name="hint_faculty_name">Faculty Name</string>
+    <string name="hint_faculty_number">Faculty Number</string>
+    <string name="button_register_faculty">Register Faculty</string>
+    <string name="hint_rector_name">Rector Name</string>
+    <string name="button_register_rector">Register Rector</string>
+    <string name="hint_rector_phone_number">Rector Phone Number</string>
+    <string name="hint_rector_hostel_no">Rector Hostel No</string>
 </resources>
